@@ -442,3 +442,101 @@ body.dark-mode .academic-link:hover {
         height: 150px;
     }
 }
+
+/* Technologies Page Styles */
+#technologies {
+    padding: 2rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-category {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-category:hover {
+    transform: translateY(-5px);
+}
+
+.tech-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.tech-header i {
+    font-size: 1.5rem;
+    color: #61dafb;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-tag {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.tech-tag.core {
+    background-color: rgba(52, 152, 219, 0.4);
+    font-weight: 500;
+}
+
+.proficiency-legend {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.proficiency-legend .tech-tag {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .tech-category {
+    background-color: rgba(30, 41, 59, 0.5);
+}
+
+body.dark-mode .tech-tag {
+    background-color: rgba(41, 128, 185, 0.2);
+}
+
+body.dark-mode .tech-tag.core {
+    background-color: rgba(41, 128, 185, 0.4);
+}
+
+body.dark-mode .tech-tag.frontend {
+    background-color: rgba(148, 101, 224, 0.4);
+}
+
+body.dark-mode .tech-tag.backend {
+    background-color: rgba(160, 63, 139, 0.4);
+}
+
+@media (max-width: 600px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
