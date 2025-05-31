@@ -64,6 +64,11 @@ header {
     color: white;
 }
 
+.navbar-brand h1 a {
+    color: white !important; /* Forçar cor branca para o link do nome */
+    text-decoration: none;
+}
+
 .navbar-links {
     display: flex;
     gap: 2.5rem; /* Increased spacing between links */
@@ -223,6 +228,11 @@ a {
     text-decoration: none;
 }
 
+/* Regra específica para ícones Font Awesome */
+.fas, .fab {
+    color: white;
+}
+
 a:hover {
     text-decoration: underline;
     color: #8be9fd; /* Azul ainda mais claro ao passar o mouse */
@@ -230,6 +240,12 @@ a:hover {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: white;
+}
+
+/* Regra específica para o link do nome no header */
+.navbar-brand h1 a:hover {
+    text-decoration: none;
+    color: white !important;
 }
 
 /* Mantemos as regras para o modo escuro para compatibilidade */
@@ -353,5 +369,76 @@ body.dark-mode .contact-icon {
         left: 0;
     }    body.dark-mode .navbar-links {
         background-color: rgba(30, 41, 59, 0.95); /* Atualizada para combinar com o header em modo escuro */
+    }
+}
+
+/* Quick Links Section */
+.quick-links {
+    text-align: center;
+    padding: 30px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.academic-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: rgba(52, 152, 219, 0.2);    color: white !important; /* Forçar cor branca */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer; /* Indicar que é clicável */
+}
+
+.academic-link i,
+.academic-link .fas,
+.academic-link .fa-graduation-cap,
+.academic-link .fa-briefcase {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white !important; /* Garantir que os ícones sejam brancos com !important para sobrepor qualquer outra regra */
+}
+
+.academic-link span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.academic-link:hover {
+    background-color: rgba(52, 152, 219, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .academic-link {
+    background-color: rgba(41, 128, 185, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .academic-link:hover {
+    background-color: rgba(41, 128, 185, 0.4);
+}
+
+@media (max-width: 600px) {
+    .links-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .academic-link {
+        width: 150px;
+        height: 150px;
     }
 }

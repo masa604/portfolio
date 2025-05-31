@@ -33,11 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light');
         }
     });
-    
-    // Fecha o menu quando um link é clicado (para mobile)
+      // Fecha o menu quando um link é clicado (para mobile)
     document.querySelectorAll('.navbar-links a').forEach(link => {
         link.addEventListener('click', () => {
             navbarLinks.classList.remove('active');
+        });
+    });
+    
+    // Garantir que os links acadêmicos funcionem corretamente
+    document.querySelectorAll('.academic-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            window.location.href = link.getAttribute('href');
         });
     });
 });
