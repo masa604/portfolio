@@ -32,11 +32,24 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.replace('fa-sun', 'fa-moon');
             localStorage.setItem('theme', 'light');
         }
-    });
-      // Fecha o menu quando um link é clicado (para mobile)
+    });      // Fecha o menu quando um link é clicado (para mobile)
     document.querySelectorAll('.navbar-links a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
             navbarLinks.classList.remove('active');
+            
+            // Melhoria na navegação para links de âncora
+            if(link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // Ajusta o scroll para considerar o header fixo
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
     
